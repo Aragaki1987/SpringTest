@@ -17,4 +17,8 @@ public class Bonjovi implements CompactDisc {
     public void play() {
         System.out.println("Bonjovi is best");
     }
+
+    public void playTrack(int track) {
+
+    }
 }

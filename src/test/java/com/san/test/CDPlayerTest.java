@@ -1,6 +1,7 @@
 package com.san.test;
 
 import com.san.spring.CDPlayerConfig;
+import com.san.spring.aspects.TrackCounter;
 import com.san.spring.bean.CompactDisc;
 import com.san.spring.bean.MediaPlayer;
 import org.junit.Rule;
@@ -32,8 +33,11 @@ public class CDPlayerTest {
     private MediaPlayer player;
 
     @Autowired
-    @Qualifier("bonjovi")
+    @Qualifier("blankDisc")
     private CompactDisc cd;
+
+    @Autowired
+    private TrackCounter counter;
 
     @Test
     public void cdShouldNotBeNull() {
@@ -42,9 +46,20 @@ public class CDPlayerTest {
     @Test
     public void play() {
         player.play();
-        assertEquals(
-                "Playing Sgt. Pepper's Lonely Hearts Club Band" +
-                        " by The Beatles",
-                log.getLog());
+    }
+
+
+    @Test
+    public void testTrackCounter() {
+        cd.playTrack(0);
+        cd.playTrack(1);
+        cd.playTrack(2);
+        cd.playTrack(2);
+        cd.playTrack(2);
+        cd.playTrack(2);
+        assertEquals(1, counter.getPlayCount(0));
+        assertEquals(1, counter.getPlayCount(1));
+        assertEquals(4, counter.getPlayCount(2));
+        assertEquals(0, counter.getPlayCount(3));
     }
 }

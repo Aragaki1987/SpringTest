@@ -5,4 +5,6 @@ package com.san.spring.bean;
  */
 public interface CompactDisc {
     void play();
+
+    void playTrack(int trackNumber);
 }
