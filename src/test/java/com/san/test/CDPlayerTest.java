@@ -1,6 +1,6 @@
 package com.san.test;
 
-import com.san.spring.CDPlayerConfig;
+import com.san.spring.config.CDPlayerConfig;
 import com.san.spring.aspects.TrackCounter;
 import com.san.spring.bean.CompactDisc;
 import com.san.spring.bean.MediaPlayer;

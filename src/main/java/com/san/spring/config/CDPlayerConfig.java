@@ -1,6 +1,7 @@
-package com.san.spring;
+package com.san.spring.config;
 
 import com.san.spring.aspects.Audience;
+import com.san.spring.aspects.EncoreableIntroducer;
 import com.san.spring.aspects.TrackCounter;
 import com.san.spring.bean.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,5 +63,10 @@ public class CDPlayerConfig {
 
         cd.setTracks(tracks);
         return cd;
+    }
+
+    @Bean
+    public EncoreableIntroducer encoreableIntroducer() {
+        return new EncoreableIntroducer();
     }
 }
