@@ -1,12 +1,23 @@
 package com.san.spring.bean;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * Created by AnNN1 on 1/3/2017.
  */
 public class Spitter {
+
     private Long id;
+
+    @NotNull
+    @Size(min=5, max = 16)
     private String username;
+
     private String password;
+
+    @NotNull
+    @Size(min=5, max = 16)
     private String firstName;
     private String lastName;
 

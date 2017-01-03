@@ -16,10 +16,4 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String postHome() {
-        return "postHome";
-    }
-
-
 }

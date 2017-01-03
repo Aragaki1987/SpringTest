@@ -22,11 +22,4 @@ public class HomeControllerTest {
         mockMvc.perform(get("/")).andExpect(view().name("home"));
     }
 
-    @Test
-    public void testPostHomePage() throws Exception {
-        HomeController controller = new HomeController();
-        MockMvc mockMvc = standaloneSetup(controller).build();
-
-        mockMvc.perform(post("/")).andExpect(view().name("postHome"));
-    }
 }

@@ -3,8 +3,8 @@ package com.san.test;
 import com.san.spring.bean.Spittle;
 import com.san.spring.controller.SpittleController;
 import com.san.spring.repository.SpittleRepository;
+import org.junit.Ignore;
 import org.junit.Test;
-import org.mockito.internal.exceptions.ExceptionIncludingMockitoWarnings;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceView;
 
@@ -14,9 +14,7 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -29,6 +27,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
  */
 public class SpittleControllerTest {
     @Test
+    @Ignore
     public void shouldShowRecentSpittles() throws Exception {
         List<Spittle> expectedSpittles = createSpittleList(20);
         SpittleRepository mockRepository =
